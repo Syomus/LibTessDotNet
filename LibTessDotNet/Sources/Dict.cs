@@ -32,9 +32,9 @@
 */
 
 #if DOUBLE
-namespace LibTessDotNet.Double
+namespace ProceduralToolkit.LibTessDotNet.Double
 #else
-namespace LibTessDotNet
+namespace ProceduralToolkit.LibTessDotNet
 #endif
 {
     internal class Dict<TValue> where TValue : class

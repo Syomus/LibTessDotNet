@@ -1,4 +1,4 @@
-﻿using LibTessDotNet;
+﻿using ProceduralToolkit.LibTessDotNet;
 using System;
 using System.Drawing;
 
@@ -7,7 +7,7 @@ namespace TessExample
     class Program
     {
         // The data array contains 4 values, it's the associated data of the vertices that resulted in an intersection.
-        private static object VertexCombine(LibTessDotNet.Vec3 position, object[] data, float[] weights)
+        private static object VertexCombine(ProceduralToolkit.LibTessDotNet.Vec3 position, object[] data, float[] weights)
         {
             // Fetch the vertex data.
             var colors = new Color[] { (Color)data[0], (Color)data[1], (Color)data[2], (Color)data[3] };
@@ -28,27 +28,27 @@ namespace TessExample
             var inputData = new float[] { 0.0f, 3.0f, -1.0f, 0.0f, 1.6f, 1.9f, -1.6f, 1.9f, 1.0f, 0.0f };
 
             // Create an instance of the tessellator. Can be reused.
-            var tess = new LibTessDotNet.Tess();
+            var tess = new ProceduralToolkit.LibTessDotNet.Tess();
 
             // Construct the contour from inputData.
             // A polygon can be composed of multiple contours which are all tessellated at the same time.
             int numPoints = inputData.Length / 2;
-            var contour = new LibTessDotNet.ContourVertex[numPoints];
+            var contour = new ProceduralToolkit.LibTessDotNet.ContourVertex[numPoints];
             for (int i = 0; i < numPoints; i++)
             {
                 // NOTE : Z is here for convenience if you want to keep a 3D vertex position throughout the tessellation process but only X and Y are important.
-                contour[i].Position = new LibTessDotNet.Vec3(inputData[i * 2], inputData[i * 2 + 1], 0);
+                contour[i].Position = new ProceduralToolkit.LibTessDotNet.Vec3(inputData[i * 2], inputData[i * 2 + 1], 0);
                 // Data can contain any per-vertex data, here a constant color.
                 contour[i].Data = Color.Azure;
             }
             // Add the contour with a specific orientation, use "Original" if you want to keep the input orientation.
-            tess.AddContour(contour, LibTessDotNet.ContourOrientation.Clockwise);
+            tess.AddContour(contour, ProceduralToolkit.LibTessDotNet.ContourOrientation.Clockwise);
 
             // Tessellate!
             // The winding rule determines how the different contours are combined together.
             // See http://www.glprogramming.com/red/chapter11.html (section "Winding Numbers and Winding Rules") for more information.
             // If you want triangles as output, you need to use "Polygons" type as output and 3 vertices per polygon.
-            tess.Tessellate(LibTessDotNet.WindingRule.EvenOdd, LibTessDotNet.ElementType.Polygons, 3, VertexCombine);
+            tess.Tessellate(ProceduralToolkit.LibTessDotNet.WindingRule.EvenOdd, ProceduralToolkit.LibTessDotNet.ElementType.Polygons, 3, VertexCombine);
 
             // Same call but the last callback is optional. Data will be null because no interpolated data would have been generated.
             //tess.Tessellate(LibTessDotNet.WindingRule.EvenOdd, LibTessDotNet.ElementType.Polygons, 3); // Some vertices will have null Data in this case.

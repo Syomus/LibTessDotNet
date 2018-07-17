@@ -35,9 +35,9 @@ using System;
 using System.Diagnostics;
 
 #if DOUBLE
-namespace LibTessDotNet.Double
+namespace ProceduralToolkit.LibTessDotNet.Double
 #else
-namespace LibTessDotNet
+namespace ProceduralToolkit.LibTessDotNet
 #endif
 {
     internal struct PQHandle

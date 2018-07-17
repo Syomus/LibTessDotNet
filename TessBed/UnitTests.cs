@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using NUnit.Framework;
-using LibTessDotNet;
+using ProceduralToolkit.LibTessDotNet;
 using System.Reflection;
 
 namespace TessBed

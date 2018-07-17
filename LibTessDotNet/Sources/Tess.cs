@@ -37,10 +37,10 @@ using System.Diagnostics;
 
 #if DOUBLE
 using Real = System.Double;
-namespace LibTessDotNet.Double
+namespace ProceduralToolkit.LibTessDotNet.Double
 #else
 using Real = System.Single;
-namespace LibTessDotNet
+namespace ProceduralToolkit.LibTessDotNet
 #endif
 {
     /// <summary>

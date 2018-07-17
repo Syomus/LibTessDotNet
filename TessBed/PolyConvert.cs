@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using LibTessDotNet;
+using ProceduralToolkit.LibTessDotNet;
 
 namespace TessBed
 {

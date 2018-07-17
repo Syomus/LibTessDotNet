@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
-using LibTessDotNet;
+using ProceduralToolkit.LibTessDotNet;
 using System.Diagnostics;
 
 namespace TessBed

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
-using LibTessDotNet;
+using ProceduralToolkit.LibTessDotNet;
 
 namespace TessBed
 {

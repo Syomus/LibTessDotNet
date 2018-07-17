@@ -36,9 +36,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 #if DOUBLE
-namespace LibTessDotNet.Double
+namespace ProceduralToolkit.LibTessDotNet.Double
 #else
-namespace LibTessDotNet
+namespace ProceduralToolkit.LibTessDotNet
 #endif
 {
     internal class PriorityQueue<TValue> where TValue : class
